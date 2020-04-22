@@ -4,10 +4,16 @@ import javax.swing.JFrame;
 import javax.swing.JTextPane;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
+import java.awt.Window.Type;
+import javax.swing.JList;
+import java.awt.Button;
 
 public class Frame1 {
 
-	private JFrame frame;
+	private JFrame frmDiscordBotMaker;
 
 	/**
 	 * Launch the application.
@@ -17,7 +23,7 @@ public class Frame1 {
 			public void run() {
 				try {
 					Frame1 window = new Frame1();
-					window.frame.setVisible(true);
+					window.frmDiscordBotMaker.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,16 +42,16 @@ public class Frame1 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmDiscordBotMaker = new JFrame();
+		frmDiscordBotMaker.setTitle("Discord Bot Maker");
+		frmDiscordBotMaker.setBounds(100, 100, 450, 300);
+		frmDiscordBotMaker.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JTextPane txtpnEncored = new JTextPane();
-		txtpnEncored.setText("Encored");
-		frame.getContentPane().add(txtpnEncored, BorderLayout.SOUTH);
+		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("Hi");
+		frmDiscordBotMaker.getContentPane().add(lblNewJgoodiesLabel, BorderLayout.NORTH);
 		
-		JButton btnNewButton = new JButton("Bass");
-		frame.getContentPane().add(btnNewButton, BorderLayout.CENTER);
+		Button button = new Button("Export To Javascript");
+		frmDiscordBotMaker.getContentPane().add(button, BorderLayout.SOUTH);
 	}
 
 }
