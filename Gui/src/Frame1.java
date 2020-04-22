@@ -10,6 +10,7 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.Window.Type;
 import javax.swing.JList;
 import java.awt.Button;
+import javax.swing.JEditorPane;
 
 public class Frame1 {
 
@@ -52,6 +53,9 @@ public class Frame1 {
 		
 		Button button = new Button("Export To Javascript");
 		frmDiscordBotMaker.getContentPane().add(button, BorderLayout.SOUTH);
+		
+		JEditorPane editorPane = new JEditorPane();
+		frmDiscordBotMaker.getContentPane().add(editorPane, BorderLayout.CENTER);
 	}
 
 }
