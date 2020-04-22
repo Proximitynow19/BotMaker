@@ -11,6 +11,14 @@ import java.awt.Window.Type;
 import javax.swing.JList;
 import java.awt.Button;
 import javax.swing.JEditorPane;
+import javax.swing.JSplitPane;
+import javax.swing.JSeparator;
+import javax.swing.SwingConstants;
+import java.awt.Component;
+import javax.swing.Box;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
 
 public class Frame1 {
 
@@ -47,15 +55,22 @@ public class Frame1 {
 		frmDiscordBotMaker.setTitle("Discord Bot Maker");
 		frmDiscordBotMaker.setBounds(100, 100, 450, 300);
 		frmDiscordBotMaker.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("Hi");
-		frmDiscordBotMaker.getContentPane().add(lblNewJgoodiesLabel, BorderLayout.NORTH);
+		frmDiscordBotMaker.getContentPane().setLayout(new FormLayout(new ColumnSpec[] {
+				ColumnSpec.decode("106px"),
+				ColumnSpec.decode("222px"),
+				ColumnSpec.decode("106px"),},
+			new RowSpec[] {
+				RowSpec.decode("239px"),
+				RowSpec.decode("22px"),}));
 		
 		Button button = new Button("Export To Javascript");
-		frmDiscordBotMaker.getContentPane().add(button, BorderLayout.SOUTH);
+		frmDiscordBotMaker.getContentPane().add(button, "1, 2, 3, 1, fill, top");
 		
 		JEditorPane editorPane = new JEditorPane();
-		frmDiscordBotMaker.getContentPane().add(editorPane, BorderLayout.CENTER);
+		frmDiscordBotMaker.getContentPane().add(editorPane, "1, 1, left, fill");
+		
+		JEditorPane editorPane_1 = new JEditorPane();
+		frmDiscordBotMaker.getContentPane().add(editorPane_1, "3, 1, left, fill");
 	}
 
 }
